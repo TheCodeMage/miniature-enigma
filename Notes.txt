@@ -137,6 +137,14 @@ Request URL:	http://127.0.0.1:8000/
 The empty path didn’t match any of these.) error တက်
 http://127.0.0.1:8000/members/ ကိုသွားမှ result ထွက်
  
+# 3 x txt files commitment
+
+#4th Commit
+my_tennis_club > members > ထဲမှာ templates ဆိုတဲ့ folder နဲ့ သူ့ထဲမှာ myfirst.html ကို ဖန်တီး
+my_tennis_club  > members > views.py ကို ဒုတိယအကြိမ် edit လုပ်
+my_tennis_club > my_tennis_club > settings.py ထဲက installed apps ထဲမှာ members ဆိုတဲ့ app ကို ထည့်
+migrate လုပ်ခဲ့ ပြီး၍ ထပ်လုပ်ရန်မလို
+
 
 
 

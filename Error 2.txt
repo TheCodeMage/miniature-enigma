@@ -1,0 +1,24 @@
+TemplateDoesNotExist at /members/
+myfirst.html
+Request Method:	GET
+Request URL:	http://127.0.0.1:8000/members/
+Django Version:	5.2.7
+Exception Type:	TemplateDoesNotExist
+Exception Value:	
+myfirst.html
+Exception Location:	R:\24-Oct-2025\venv\Lib\site-packages\django\template\loader.py, line 19, in get_template
+Raised during:	members.views.members
+Python Executable:	R:\24-Oct-2025\venv\Scripts\python.exe
+Python Version:	3.13.2
+Python Path:	
+['R:\\24-Oct-2025\\my_tennis_club',
+ 'C:\\Program Files\\Python313\\python313.zip',
+ 'C:\\Program Files\\Python313\\DLLs',
+ 'C:\\Program Files\\Python313\\Lib',
+ 'C:\\Program Files\\Python313',
+ 'R:\\24-Oct-2025\\venv',
+ 'R:\\24-Oct-2025\\venv\\Lib\\site-packages']
+Server time:	Fri, 24 Oct 2025 08:38:54 +0000
+
+my_tennis_club > my_tennis_club > settings.py ထဲက installed apps ထဲမှာ members ဆိုတဲ့ app ကို
+ထည့်လိုက်ရင် solved
