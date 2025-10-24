@@ -1,0 +1,142 @@
+python --version
+3.13.2
+
+pip --version
+pip 25.1.1 from C:\Users\Layla\AppData\Roaming\Python\Python313\site-packages\pip (python 3.13)
+
+PS R:\24-Oct-2025> pip list
+Package                       Version
+----------------------------- ---------
+anyio                         4.8.0
+asgiref                       3.8.1
+certifi                       2025.1.31
+charset-normalizer            3.4.1
+colorama                      0.4.6
+distlib                       0.3.9
+Django                        5.1.7
+django-cors-headers           4.6.0
+django-environ                0.12.0
+django-tailwind               3.9.0
+djangorestframework           3.15.2
+djangorestframework_simplejwt 5.5.0
+docopt                        0.6.2
+filelock                      3.17.0
+googletrans                   4.0.2
+h11                           0.14.0
+h2                            4.2.0
+hpack                         4.1.0
+httpcore                      1.0.7
+httpx                         0.28.1
+hyperframe                    6.1.0
+idna                          3.10
+iniconfig                     2.1.0
+packaging                     24.2
+pillow                        11.1.0
+pip                           25.1.1
+pipreqs                       0.4.13
+platformdirs                  4.3.6
+pluggy                        1.6.0
+Pygments                      2.19.2
+PyJWT                         2.9.0
+pytest                        8.4.1
+requests                      2.32.3
+setuptools                    76.0.0
+sniffio                       1.3.1
+sqlparse                      0.5.3
+tzdata                        2025.1
+urllib3                       2.3.0
+virtualenv                    20.29.3
+whitenoise                    6.9.0
+yarg                          0.1.10
+
+py -m venv venv
+.\venv\Scripts\activate
+
+(venv) PS R:\24-Oct-2025\venv>
+python --version
+3.13.2
+
+pip --version
+pip 24.3.1 from R:\24-Oct-2025\venv\Lib\site-packages\pip (python 3.13)
+
+pip list
+pip     24.3.1
+(venv) PS R:\24-Oct-2025\venv>
+
+py -m pip install django
+
+(venv) PS R:\24-Oct-2025\venv> pip list
+Package  Version
+-------- -------
+asgiref  3.10.0
+Django   5.2.7
+pip      24.3.1
+sqlparse 0.5.3
+tzdata   2025.2
+(venv) PS R:\24-Oct-2025\venv>
+
+python.exe -m pip install --upgrade pip
+
+(venv) PS R:\24-Oct-2025\venv> pip --version
+pip 25.2 from R:\24-Oct-2025\venv\Lib\site-packages\pip (python 3.13)
+
+django-admin --version
+5.1.7
+
+(venv) PS R:\24-Oct-2025> django-admin --version
+5.2.7
+(venv) PS R:\24-Oct-2025>
+
+cd..
+pip freeze > requirements.txt
+
+django-admin startproject my_tennis_club
+
+#new files such as
+my_tennis_club > my_tennis_club > wsgi.py
+my_tennis_club > my_tennis_club > urls.py
+my_tennis_club > my_tennis_club > settings.py
+my_tennis_club > my_tennis_club > asgi.py
+my_tennis_club > my_tennis_club > __init__.py
+my_tennis_club > manage.py
+are being created for the first time.
+
+#2nd Commit
+virtual environment နဲ့ my_tennis_club လို့ခေါ်တဲ့ name နဲ့ Project ဖန်တီးမှုပြီးစီး။
+virtual environment မှာ Django installation လုပ်ဆောင်မှု ပြီးစီး။
+virtual environment မှာ pip version upgrade ပြီးစီး (25.1.1 to 25.2)
+requirements.txt file export ထုတ်အပြီး။
+project ကို တစ်ခါမှ မrun ရသေး။
+
+#3rd Commit
+cd my_tennis_club
+py manage.py runserver
+(ပထမဆုံး အကြိမ် run)
+py manage.py migrate
+
+py manage.py startapp members (1st app)
+
+#new files such as
+my_tennis_club > members > migrations > __init__.py
+my_tennis_club > members > views.py
+my_tennis_club > members > tests.py
+my_tennis_club > members > models.py
+my_tennis_club > members > apps.py
+my_tennis_club > members > admin.py
+my_tennis_club > members > __init__.py
+has been created.
+
+my_tennis_club  > members > views.py ,
+(custom created) my_tennis_club > members > urls.py နှင့် 
+my_tennis_club > my_tennis_club > urls.py ကို changes အနည်းငယ်ပြုလုပ်
+(app ကို run စဉ်မှာ page not found 404 
+Request Method:	GET
+Request URL:	http://127.0.0.1:8000/
+1.members/ [name='members']
+2.admin/
+The empty path didn’t match any of these.) error တက်
+http://127.0.0.1:8000/members/ ကိုသွားမှ result ထွက်
+ 
+
+
+
