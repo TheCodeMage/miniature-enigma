@@ -145,6 +145,87 @@ my_tennis_club  > members > views.py ကို ဒုတိယအကြိမ်
 my_tennis_club > my_tennis_club > settings.py ထဲက installed apps ထဲမှာ members ဆိုတဲ့ app ကို ထည့်
 migrate လုပ်ခဲ့ ပြီး၍ ထပ်လုပ်ရန်မလို
 
+#5th Commit
+my_tennis_club > members > models.py ကို edit
+SQLite Database (db.sqlite3)
+py manage.py makemigrations members (to actually create the table in the datebase)
+my_tennis_club > members > migrations > 001_initial.py (file auto ပေါ် )
+py manage.py migrate (the table is not created yet, so by running this command 
+,Django will create and execute an SQL statement based on the content of the new file 
+in the migrations folder.)
+Now we have a Member table in our datebase.
 
+Side - Note
+View SQL
+py manage.py sqlmigrate members 0001
+Add Records
+py manage.py shell
+>>>from members.models import Member
+>>>Member.objects.all()
+>>>member = Member(firstname= 'Emil', lastname='Refsnes')
+>>>member.save()
+>>>Member.objects.all().values()
+Add Multiple Records
+>>> member1 = Member(firstname='Tobias', lastname='Refsnes')
+>>> member2 = Member(firstname='Linus', lastname='Refsnes')
+>>> member3 = Member(firstname='Lene', lastname='Refsnes')
+>>> member4 = Member(firstname='Stale', lastname='Refsnes')
+>>> member5 = Member(firstname='Jane', lastname='Doe')
+>>> members_list = [member1, member2, member3, member4, member5]
+>>> for x in members_list: x.save()
+>>> Member.objects.all().values()
+<QuerySet [{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'},
+{'id': 2, 'firstname': 'Tobias', 'lastname': 'Refsnes'},
+{'id': 3, 'firstname': 'Linus', 'lastname': 'Refsnes'},
+{'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes'},
+{'id': 5, 'firstname': 'Stale', 'lastname': 'Refsnes'},
+{'id': 6, 'firstname': 'Jane', 'lastname': 'Doe'}]>
+Update Records
+>>> from members.models import Member
+>>> x = Member.objects.all()[4]
+>>> x.firstname
+>>> x.firstname = "Stalikken"
+>>> x.save()
+>>> Member.objects.all().values()
+<QuerySet [{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'},
+{'id': 2, 'firstname': 'Tobias', 'lastname': 'Refsnes'},
+{'id': 3, 'firstname': 'Linus', 'lastname': 'Refsnes'},
+{'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes'},
+{'id': 5, 'firstname': 'Stalikken', 'lastname': 'Refsnes'},
+{'id': 6, 'firstname': 'Jane', 'lastname': 'Doe'}]>
+Delete Records
+>>> from members.models import Member
+>>> x = Member.objects.all()[5]
+>>> x.firstname
+>>> x.delete()
+(1, {'members.Member': 1})
+>>> Member.objects.all().values()
+<QuerySet [{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'},
+{'id': 2, 'firstname': 'Tobias', 'lastname': 'Refsnes'},
+{'id': 3, 'firstname': 'Linus', 'lastname': 'Refsnes'},
+{'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes'},
+{'id': 5, 'firstname': 'Stalikken', 'lastname': 'Refsnes'}]>
+
+my_tennis_club > members > models.py မှာ
+phone နဲ့ joined_date (Add Fields in the Model)
+py manage.py makemigrations members
+py manage.py migrate
+
+
+Side - Note
+Insert Data
+py manage.py shell
+>>> from members.models import Member
+>>> x = Member.objects.all()[0]
+>>> x.phone = 5551234
+>>> x.joined_date = '2022-01-05'
+>>> x.save()
+>>> Member.objects.all().values()
+<QuerySet [
+{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes', 'phone': 5551234, 'joined_date': datetime.date(2022, 1, 5)},
+{'id': 2, 'firstname': 'Tobias', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None},
+{'id': 3, 'firstname': 'Linus', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None},
+{'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None},
+{'id': 5, 'firstname': 'Stalikken', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None}]>
 
 

@@ -1,0 +1,86 @@
+python manage.py shell
+>>> from members.models import Member
+>>> Member.objects.all()
+>>> member = Member(firstname='Emil', lastname='Refsnes')
+>>> member.save()
+>>> Member.objects.all().values()
+<QuerySet [{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'}]>
+>>> member1 = Member(firstname='Tobias', lastname='Refsnes')
+>>> member2 = Member(firstname='Linus', lastname='Refsnes')
+>>> member3 = Member(firstname='Lene', lastname='Refsnes')
+>>> member4 = Member(firstname='Stale', lastname='Refsnes')
+>>> member5 = Member(firstname='Jane', lastname='Doe')
+>>> members_list = [member1, member2, member3, member4, member5]
+>>> for x in members_list:
+မှာ
+...   x.save() လဲလုပ်ရော
+... x.save()
+  File "<console>", line 2
+    x.save()
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> for x in members_list:
+... x.save()
+  File "<console>", line 2
+    x.save()
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> Member.objects.all().values()
+<QuerySet [{'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'}]>
+>>> x.save()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'x' is not defined
+>>>
+
+🔍 ပြဿနာအကြောင်း
+
+Python ထဲမှာ for loop, if, while စတဲ့ statement တွေကို run တဲ့အခါ
+အဲ့ဒီ statement အောက်က line ကို indent (space 4 ခုပေး) သို့မဟုတ် tab 1 ခုပေး ရပါတယ်။
+သင်ရေးတဲ့အတိုင်း 👇
+for x in members_list:
+x.save()
+မှာ x.save() ကို indent မပေးတော့ Python က error ပေးတာပါ။
+✅ ဖြေရှင်းနည်း (သုံးနည်း ၂ မျိုး)
+နည်း (၁) — Shell ထဲမှာ တိုက်ရိုက်သုံးတဲ့နည်း
+
+Python shell (>>>) ထဲမှာ for loop သုံးတဲ့အခါ
+... ဆိုတဲ့ second prompt ပေါ်လာတဲ့အခါ space 4 ခုပေးပြီး ရေးရမယ်။
+
+ဒီလိုရေးပါ 👇
+>>> for x in members_list:
+...     x.save()
+...
+
+နောက်ဆုံး ... ပြီးလို့ (သစ်စာမရှိတော့) Enter နှစ်ခုပေးလိုက်ပါ။
+ဒါဆို loop ပြီးသွားပါပြီ။
+
+နည်း (၂) — တစ်လိုင်းနဲ့ တင်ဖို့ (shortcut)
+
+တစ်လိုင်းတည်းနဲ့သုံးချင်ရင် semicolon (;) သုံးလို့လည်းရပါတယ် 👇
+>>> for x in members_list: x.save()
+ဒီလိုလည်းအဆင်ပြေပါတယ်။
+
+✅ ပြီးရင် စစ်ပါ
+
+အဲ့အောက်မှာ စစ်ကြည့်ပါ 👇
+>>> Member.objects.all().values()
+
+ဆိုရင်
+<QuerySet [
+  {'id': 1, 'firstname': 'Emil', 'lastname': 'Refsnes'},
+  {'id': 2, 'firstname': 'Tobias', 'lastname': 'Refsnes'},
+  {'id': 3, 'firstname': 'Linus', 'lastname': 'Refsnes'},
+  {'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes'},
+  {'id': 5, 'firstname': 'Stale', 'lastname': 'Refsnes'},
+  {'id': 6, 'firstname': 'Jane', 'lastname': 'Doe'}
+]>
+
+လိုမျိုး ပေါ်လာပါလိမ့်မယ်။
+
+အကျဉ်းချုပ်:
+✅ Python shell မှာ loop တွေကို run ချင်ရင် indentation လိုတယ်။
+✅ Semicolon နဲ့တစ်လိုင်းတည်းလည်းသုံးလို့ရတယ်။
+
+သင် shell ထဲမှာ Python syntax အခြေခံတွေ စမ်းသုံးနေတာဆိုရင်
+သင်သုံးနေတဲ့နည်းဟာမှန်ပါတယ်။ ပြဿနာက indentation ပဲဖြစ်ပါတယ်။
