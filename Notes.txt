@@ -228,4 +228,14 @@ py manage.py shell
 {'id': 4, 'firstname': 'Lene', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None},
 {'id': 5, 'firstname': 'Stalikken', 'lastname': 'Refsnes', 'phone': None, 'joined_date': None}]>
 
+#6th Commit
+my_tennis_club > members > templates > all_members.html (manually created)
+Do you see the {% %} brackets inside the HTML document?
+
+They are Django Tags, telling Django to perform some programming logic inside these brackets.
+
+my_tennis_club > members > views.py (edited)
+
+
+
 
